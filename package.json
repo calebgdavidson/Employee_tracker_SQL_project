@@ -1,4 +1,11 @@
 {
+  "name": "sql-employee-tracker",
+  "description": "SQl employee tracker project",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node server.js"
+},
   "dependencies": {
     "console.table": "^0.10.0",
     "inquirer": "^8.2.4",
