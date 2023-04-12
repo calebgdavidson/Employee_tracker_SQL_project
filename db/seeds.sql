@@ -6,7 +6,7 @@ VALUES
 
 INSERT INTO role (title, salary, department_id)
 VALUES
-('Marketing Associate', 12000, 3)
+('Marketing Associate', 12000, 1)
 ('Web Developer', 22500, 2)
 ('Manager', 30000, 3)
 

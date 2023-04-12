@@ -1,5 +1,6 @@
 var inquirer = require("inquirer");
 var mysql = require("mysql");
+const cTable = require('console.table'); 
 
 const greet = (name=”Everyone”) => {    console.log(`Hello ${name}`);}
 greet();
@@ -22,7 +23,7 @@ inquirer
 .prompt({
     name: "options",
     type: "list",
-    message: "Welcome, please make a selection!",
+    message: "Welcome, please make a selection",
     choices: 
 [
     "Create Department",
@@ -44,3 +45,27 @@ else if(answer.selection === "Create Role") {
     connection.end();
 }});
 }
+
+viewDepartments = () => {
+    connection.query(`SELECT * FROM department ORDER BY department_id ASC;`, (err, res) => {
+        if (err) throw err;
+        console.table('\n', res, '\n');
+        startApp();
+    })
+};
+
+viewRoles = () => {
+    connection.query(`SELECT role_id, role_title, salary, department_id`, (err, res) => {
+        if (err) throw err;
+        console.table('\n', res, '\n');
+        startApp();
+    })
+};
+
+viewEmployees = () => {
+    connection.query(`SELECT employee_id, first_name, last_name, department_id, salary,`, (err, res) => {
+        if (err) throw err;
+        console.table('\n', res, '\n');
+        startApp();
+    })
+};
