@@ -47,25 +47,29 @@ else if(answer.selection === "Create Role") {
 }
 
 viewDepartments = () => {
-    connection.query(`SELECT * FROM department ORDER BY department_id ASC;`, (err, res) => {
-        if (err) throw err;
-        console.table('\n', res, '\n');
-        startApp();
-    })
-};
+connection.query(`SELECT * FROM department ORDER BY department_id ASC;`, (err, res) => {
+    if (err) throw err;
+    console.table('\n', res, '\n');
+    startApp();
+})};
 
 viewRoles = () => {
-    connection.query(`SELECT role_id, role_title, salary, department_id`, (err, res) => {
-        if (err) throw err;
-        console.table('\n', res, '\n');
-        startApp();
-    })
-};
+connection.query(`SELECT role_id, role_title, salary, department_id`, (err, res) => {
+    if (err) throw err;
+    console.table('\n', res, '\n');
+    startApp();
+})};
 
 viewEmployees = () => {
-    connection.query(`SELECT employee_id, first_name, last_name, department_id, salary,`, (err, res) => {
-        if (err) throw err;
-        console.table('\n', res, '\n');
-        startApp();
-    })
-};
+connection.query(`SELECT employee_id, first_name, last_name, department_id, salary,`, (err, res) => {
+    if (err) throw err;
+    console.table('\n', res, '\n');
+    startApp();
+})};
+
+viewSalary = () => {
+connection.query(`SELECT * FROM department ORDER BY department_id;`, (err, res) => {
+    if (err) throw err;
+    console.table('\n', res, '\n');
+    startApp();
+})};
